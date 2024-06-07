@@ -220,8 +220,12 @@ globalkeys = gears.table.join(
     awful.key({ "Mod1" },            "Tab",     function () awful.util.spawn("rofi -show window -theme ~/.config/rofi/launchers/type-4/style-4.rasi")end,
               {description = "rofi window switcher", group = "launcher"}),
     awful.key({ modkey },            "x",     function () awful.util.spawn("/home/linus/.config/rofi/powermenu/type-3/powermenu.sh")end,
-              {description = "launch powermenu", group = "launcher"})
-    
+              {description = "launch powermenu", group = "launcher"}),
+	
+    awful.key({ modkey },            "p",     function () awful.util.spawn("/home/linus/.config/polybar/awesome.sh")end,
+              {description = "turn on polybar", group = "launcher"}),
+	awful.key({ modkey ,"Shift" },   "p",     function () awful.util.spawn("pkill polybar")end,
+			  {description = "turn off polybar", group = "launcher"})
 	-- Menubar
      -- awful.key({ modkey }, "p", function() menubar.show() end,
      --           {description = "show the menubar", group = "launcher"})
